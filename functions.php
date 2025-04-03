@@ -102,6 +102,17 @@ function tiffany_mcclean_dnp_setup() {
 }
 add_action( 'after_setup_theme', 'tiffany_mcclean_dnp_setup' );
 
+
+
+/* Remove class from body_class */
+add_filter('body_class', function (array $classes) {
+    if (in_array('custom-background', $classes)) {
+      unset( $classes[array_search('custom-background', $classes)] );
+    }
+  return $classes;
+});
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *

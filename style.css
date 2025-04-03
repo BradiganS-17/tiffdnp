@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Shauna's Web Solutions
 Author URI: https://www.shaunaswebsolutions.com
 Description: A custom theme for Tiffany McClean, DNP
-Version: 1.2.0
+Version: 1.4.7
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -402,7 +402,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
+	color: #000000;
 	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 22px;
 	line-height: 1.5;
@@ -422,6 +422,22 @@ h6 {
 }
 .entry-content section h1 {
 	font-size:42px;
+}
+.site-title {
+	margin-bottom:0;
+}
+.site-title a {
+	color:black;
+	text-decoration: none;
+	font-family:"josefin sans";
+	font-weight:400;
+	font-size:30px;
+}
+.site-title a:visited {
+	color:black;
+}
+.site-description {
+	margin-top:0;
 }
 
 p {
@@ -545,17 +561,17 @@ a {
 }
 
 a:visited {
-	color: #800080;
+	color: #9F6800;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #191970;
+	color: rgba(159,104,0, .7);
 }
 
 a:focus {
-	outline: thin dotted;
+	outline: none;
 }
 
 a:hover,
@@ -648,25 +664,46 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.entry-footer {
+	display:none;
+}
 
+article.page {
+	margin-bottom:0;
+}
 .content-container, .site-footer .site-info, .entry-content .wp-block-group__inner-container {
 	max-width: 1450px;
 /*	border:solid 1px red;*/
 	margin:0 auto;
 	padding: 50px;
 }
+.site-header {
+	border-bottom:2px solid #9F6800;
+}
 .site-header, .site-main, .widget-area, .site-footer {
 	background-color:white;
 }
+.site-header .content-container {
+	display:flex;
+	flex-direction: row;
+	padding:10px 50px 0;
+}
 .site-branding  {
 	width:auto;
-	float:left;
+	flex:60%;
+}
+.site-description {
+	color:#777777;
 }
 #primary.site-main {
-	margin-top:500px;
+	border-top:2px solid #9F6800;
 }
 .bg-teal {
 	background-color:rgba(13,138,169,0.2);
+}
+#primary .entry-content {
+	background-color: white;
+	margin-top:500px;
 }
 .entry-content * {
 	max-width: 1450px;
@@ -685,17 +722,70 @@ textarea {
 	width:60%;
 	border-top:1px solid;
 }
+.services-list {
+	margin-top:50px;
+}
+.background-img {
+	background-image: url("https://tiffanymccleandnp.com/wp-content/uploads/2025/04/full-hero.jpg"); 
+    background-position: center -200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.page-id-309 .background-img {
+	background-image: url("https://tiffanymccleandnp.com/wp-content/uploads/2025/04/20200221_070014_Original-scaled.jpeg");	
+	background-position: center top;
+}
+.home .entry-header {
+	display:none;
+}
+#secondary.widget-area .content-container {
+	display:flex;
+	flex-direction: row;
+}
+#secondary.widget-area .content-container section {
+	flex:33%;
+}
+.widget-area, .site-footer {
+	background-color:#0D8AA9;
+	color:white;
+}
+.widget-area a, .site-footer a {
+	color:#FFC351;
+	text-decoration: none;
+	font-weight:normal;
+}
+.widget-area a:hover, .widget-area a:visited, .widget-area a:focus, .site-footer a:hover, .site-footer a:visited, .site-footer a:focus, .site-footer a:focus {
+	color:#FFC351;
+}
 
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+
+.cta a.wp-block-button__link {
+	background-color:rgba(13, 138, 169, 1);
+	color:white;
+	padding:10px 20px;
+	border-radius:10px;
+	font-weight:500;
+	margin:50px 0;
+	transition:all 0.4s ease-in-out 0s;
+	border:2px solid #0D8AA9;
+}
+.cta a.wp-block-button__link:hover {
+	background-color:rgba(159,104,0, .1);
+	color:#9f6800;
+	border:2px solid #9f6800;
+}
+
 
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
 	display: block;
 	width: auto;
-	float:right;
+	margin-top:20px;
 }
 
 .main-navigation ul {
@@ -742,6 +832,13 @@ textarea {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	font-size:18px;
+	transition:all 0.4s ease-in-out 0s;
+	border-bottom:2px solid transparent;
+}
+.main-navigation a:hover {
+	transition:all 0.4s ease-in-out 0s;
+	border-bottom:2px solid #9f6800;
 }
 
 /* Small menu. */
